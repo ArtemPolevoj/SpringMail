@@ -9,7 +9,7 @@ public class MailApplication {
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(MailApplication.class, args);
-		EmailServiceImp emailServiceImp = context.getBean(EmailServiceImp.class);
+		EmailService emailServiceImp = context.getBean(EmailService.class);
 		emailServiceImp.sendEmail("mail@","subject","message");
 
 	}
