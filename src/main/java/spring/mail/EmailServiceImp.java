@@ -25,7 +25,7 @@ public class EmailServiceImp  {
 //        message.setSubject(subject);
 //        message.setText(body);
 
-// письмо с вложением
+        // письмо с вложением
         MimeMessage message = mailSender.createMimeMessage();
         try {
             MimeMessageHelper  helper = new MimeMessageHelper(message, true);
@@ -33,18 +33,12 @@ public class EmailServiceImp  {
             helper.setSubject(subject);
             helper.setText(body);
             FileSystemResource file
-                    = new FileSystemResource(new File("C:/Users/artem/Desktop/Изображение WhatsApp 2025-03-28 в 13.10.24_a2eb58cf.jpg"));
-            helper.addAttachment("Invoice.jpg", file);
+                    = new FileSystemResource(new File("path/to/file"));
+            helper.addAttachment("fileName.xxx", file);
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }
 
-
-
         mailSender.send(message);
-
-    }
-    public void print(){
-        System.out.println("Test OK");
     }
 }

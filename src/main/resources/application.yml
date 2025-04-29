@@ -1,0 +1,11 @@
+spring:
+  mail:
+    host: smtp.xxxxx
+    port: xxx
+    username: xxxx
+    password: xxxxxx
+
+  application:
+    name: mail
+server:
+  port: 8081
